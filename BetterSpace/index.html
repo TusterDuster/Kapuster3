@@ -2,7 +2,6 @@
 <html lang="en-us">
 
 <head>
-  <script src="detect.js"></script>
   <style>
     html {
       height: 100%;
@@ -36,10 +35,6 @@
 </head>
 
 <body>
-
-
-
-
   <div id="unity-container" class="unity-desktop">
     <canvas class="shadow" id="unity-canvas" width=1280 height=720></canvas>
     <div id="unity-loading-bar">
@@ -56,22 +51,6 @@
       <div id="unity-build-title">BetterSpace</div>
     </div>
   </div>
-
-
-
-
-
-
-  <script>
-
-  </script>
-
-
-
-
-
-
-
 
 
 
@@ -161,6 +140,7 @@
 
     var script = document.createElement("script");
     script.src = loaderUrl;
+    var myGameInstance = null;
     script.onload = () => {
       createUnityInstance(canvas, config, (progress) => {
         progressBarFull.style.width = 100 * progress + "%";
@@ -173,8 +153,94 @@
         alert(message);
       });
 
+
+
+      myGameInstance = unityInstance;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      var browser, uAgent = navigator.userAgent;
+      console.log("11111111");
+      if (uAgent.search("Firefox") > -1) {
+        browser = "Mozilla Firefox";
+        MyGameInstance.SendMessage('JSManager', 'DeniedBrowser', browser);
+      }
+      else if (uAgent.indexOf("OPR") > -1) {
+        browser = "Opera";
+        MyGameInstance.SendMessage('JSManager', 'DeniedBrowser', browser);
+      }
+      else if (uAgent.indexOf("Trident") > -1) {
+        browser = "Microsoft Internet Explorer";
+        MyGameInstance.SendMessage('JSManager', 'DeniedBrowser', browser);
+      }
+      else if (uAgent.indexOf("YaBrowser") > -1) {
+        browser = "Yandex";
+        MyGameInstance.SendMessage('JSManager', 'DeniedBrowser', browser);
+      } else if (uAgent.indexOf("Safari") > -1) {
+        browser = "Safari";
+        MyGameInstance.SendMessage('JSManager', 'DeniedBrowser', browser);
+      }
+      else if (uAgent.search("Chrome") > -1) {
+        browser = "Google Chrome";
+      }
+      console.log("11111111");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     };
     document.body.appendChild(script);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   </script>
 </body>
 
