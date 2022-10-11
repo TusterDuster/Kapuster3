@@ -152,26 +152,12 @@
       }).catch((message) => {
         alert(message);
       });
-
-
-
       myGameInstance = unityInstance;
+    };
+    document.body.appendChild(script);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+    function checkBrowser() {
       var browser, uAgent = navigator.userAgent;
-      console.log("11111111");
       if (uAgent.search("Firefox") > -1) {
         browser = "Mozilla Firefox";
         MyGameInstance.SendMessage('JSManager', 'DeniedBrowser', browser);
@@ -194,52 +180,7 @@
       else if (uAgent.search("Chrome") > -1) {
         browser = "Google Chrome";
       }
-      console.log("11111111");
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    };
-    document.body.appendChild(script);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    }
 
   </script>
 </body>
