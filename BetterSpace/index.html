@@ -105,43 +105,29 @@
     // config.matchWebGLToCanvasSize = false;
 
 
-
-
     var userAgent = navigator.userAgent.toLowerCase();
 
     var Mozila = /firefox/.test(userAgent);
-    var Chrome = /chrome/.test(userAgent);
     var Safari = /safari/.test(userAgent);
     var Opera = /opera/.test(userAgent);
+    var Chrome = /chrome/.test(userAgent);
 
     var InternetExplorer = false;
     if ((/mozilla/.test(userAgent) && !/firefox/.test(userAgent) && !/chrome/.test(userAgent) && !/safari/.test(userAgent) && !/opera/.test(userAgent)) || /msie/.test(userAgent))
       InternetExplorer = true;
 
-
-
     if (Mozila) {
       alert("Mozila");
-    } else if (Chrome) {
-      alert("Chrome");
-    } else if (Safari) {
-      alert("Safari");
     } else if (Opera) {
       alert("Opera");
+    } else if (Safari) {
+      alert("Safari");
+    } else if (Chrome) {
+      alert("Chrome");
     } else if (InternetExplorer) {
       alert("InternetExplorer");
     }
-
-
-
-
-
-
-
-
-
-
-
+    console.log(Mozila + "Mozila " + Safari + "Safari " + Opera + "Opera " + Chrome + "Chrome " + InternetExplorer + "InternetExplorer ");
 
     if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
       // Mobile device style: fill the whole browser client area with the game canvas:
