@@ -156,25 +156,8 @@
 
     };
     document.body.appendChild(script);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     function checkBrowser() {
-
-
       var browser, uAgent = navigator.userAgent;
-
       if (uAgent.search("Firefox") > -1) {
         browser = "Mozilla Firefox";
       }
@@ -193,24 +176,8 @@
       else if (uAgent.indexOf("Safari") > -1) {
         browser = "Safari";
       }
-
-      alert(browser);
-
-      myGameInstance.SendMessage("JSManager", "ErrorB", "browser");
-
-
-
+      myGameInstance.SendMessage("JSManager", "ErrorB", browser.toString());
     }
-
-
-
-
-
-
-
-
-
-
   </script>
 </body>
 
